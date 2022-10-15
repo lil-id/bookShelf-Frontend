@@ -285,8 +285,6 @@ function searchBook() {
 
     tempArraySearchBook.splice(0, arrayBook.length);
 
-    console.log("hello search");
-
     const serializedData = localStorage.getItem(STORAGE_KEY);
     let data = JSON.parse(serializedData);
 
@@ -337,7 +335,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     const searchButton = document.getElementById('search_button');
-    searchButton.addEventListener('click', function () {
+    searchButton.addEventListener('click', function (event) {
+        event.preventDefault();
         searchBook();
     });
 
